@@ -1,0 +1,23 @@
+<div class="refer-container">
+  <div class="refer-card">
+    <h2>🎉 Refer & Earn</h2>
+    <p class="refer-desc">Invite your friends and earn exciting rewards when they sign up!</p>
+
+    <div class="referral-box">
+      <input type="text" [value]="referralCode" readonly id="referralInput">
+      <button class="copy-btn" (click)="copyToClipboard()">📋 Copy</button>
+    </div>
+
+    <button class="share-main-btn" (click)="toggleShare()">🔗 Share</button>
+
+    <div class="share-options" [class.active]="showShare">
+      <button (click)="shareVia('whatsapp')">📱 WhatsApp</button>
+      <button (click)="shareVia('telegram')">📨 Telegram</button>
+      <button (click)="shareVia('email')">✉️ Email</button>
+      <button (click)="shareVia('facebook')">📘 Facebook</button>
+      <button (click)="shareVia('twitter')">🐦 Twitter</button>
+    </div>
+
+    <div *ngIf="copied" class="copied-msg">✅ Copied to clipboard!</div>
+  </div>
+</div>

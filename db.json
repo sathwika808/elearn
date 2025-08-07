@@ -1,0 +1,779 @@
+{
+  "feedback": [
+    {
+      "id": "f40a",
+      "name": "sdcf",
+      "email": "sdf",
+      "message": "sd",
+      "rating": "1"
+    },
+    {
+      "id": "75cd",
+      "name": "sdfgb",
+      "email": "asd",
+      "message": "das",
+      "rating": "2"
+    },
+    {
+      "id": "25c5",
+      "name": "satgwika",
+      "email": "sathwikalucky23@gmail.com",
+      "message": "12345678",
+      "rating": "1"
+    },
+    {
+      "id": "6e38",
+      "name": "Sathwika Lingampalli",
+      "email": "sathwikalucky23@gmail.com",
+      "message": "12345sargwukanjvnkldposjbpforspogbnksnfkjnkjsrh",
+      "rating": "1"
+    },
+    {
+      "id": "46a3",
+      "name": "Sathwika Lingampalli",
+      "email": "sathwikalucky23@gmail.com",
+      "message": "veru helppfukll ahdgsagshbjdbkjf",
+      "rating": "1"
+    },
+    {
+      "id": "fcf8",
+      "name": "Sathwika Lingampalli",
+      "email": "sathwikalucky23@gmail.com",
+      "message": "rtyujk",
+      "rating": "2"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1753010100145",
+      "title": "Python",
+      "description": "Learn about Python fundamentals, best practices, and applications.",
+      "tags": [
+        "backend",
+        "scripting",
+        "automation"
+      ],
+      "cards": [
+        {
+          "question": "What is a lambda function in Python?",
+          "answer": "A lambda function is an anonymous function.",
+          "id": 1753010003357,
+          "favorite": true,
+          "isReviewed": true,
+          "bookmarkEntryId": "50e4"
+        },
+        {
+          "question": "What is PEP 8?",
+          "answer": "PEP 8 is the style guide for writing Python code.",
+          "id": 1753010003497,
+          "favorite": false,
+          "isReviewed": true,
+          "bookmarkEntryId": null
+        },
+        {
+          "question": "What is list comprehension?",
+          "answer": "A concise way to create lists using a single line of code.",
+          "id": 1753010003604,
+          "favorite": true,
+          "isReviewed": true,
+          "bookmarkEntryId": "3b09"
+        }
+      ]
+    },
+    {
+      "id": "1753010100237",
+      "title": "Java",
+      "description": "Learn about Java fundamentals, best practices, and applications.",
+      "tags": [
+        "OOP",
+        "backend",
+        "android"
+      ],
+      "cards": [
+        {
+          "question": "What is JVM?",
+          "answer": "JVM stands for Java Virtual Machine.",
+          "id": 1753010003717,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is inheritance in Java?",
+          "answer": "Inheritance allows a class to inherit features from another class.",
+          "id": 1753010003833,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is a constructor?",
+          "answer": "A special method used to initialize objects.",
+          "id": 1753010003987,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100289",
+      "title": "C++",
+      "description": "Learn about C++ fundamentals, best practices, and applications.",
+      "tags": [
+        "OOP",
+        "system",
+        "performance"
+      ],
+      "cards": [
+        {
+          "question": "What is a pointer?",
+          "answer": "A variable that stores the memory address of another variable.",
+          "id": 1753010004141,
+          "favorite": true,
+          "isReviewed": true,
+          "bookmarkEntryId": "2e2d"
+        },
+        {
+          "question": "What is the STL?",
+          "answer": "Standard Template Library provides generic classes and functions.",
+          "id": 1753010004227,
+          "favorite": false,
+          "isReviewed": false,
+          "bookmarkEntryId": null
+        },
+        {
+          "question": "What is a virtual function?",
+          "answer": "A member function that can be overridden in derived class.",
+          "id": 1753010004370,
+          "favorite": false,
+          "isReviewed": false,
+          "bookmarkEntryId": null
+        }
+      ]
+    },
+    {
+      "id": "1753010100437",
+      "title": "Docker",
+      "description": "Containerize your applications for consistent development and deployment.",
+      "tags": [
+        "DevOps",
+        "container",
+        "deployment"
+      ],
+      "cards": [
+        {
+          "question": "What is Docker?",
+          "answer": "Docker is a platform for developing, shipping, and running applications in containers.",
+          "id": 1753010004511,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is a Dockerfile?",
+          "answer": "A Dockerfile is a script containing instructions to build a Docker image.",
+          "id": 1753010004589,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is Docker Hub?",
+          "answer": "Docker Hub is a cloud-based registry to link code repositories and build Docker images.",
+          "id": 1753010004652,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100545",
+      "title": "Linux",
+      "description": "Master Linux basics, shell scripting, and system administration.",
+      "tags": [
+        "OS",
+        "scripting",
+        "DevOps"
+      ],
+      "cards": [
+        {
+          "question": "What is the root user?",
+          "answer": "The root user has administrative privileges in a Linux system.",
+          "id": 1753010004721,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is chmod used for?",
+          "answer": "chmod changes the file access permissions.",
+          "id": 1753010004801,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What does the ls command do?",
+          "answer": "ls lists the contents of a directory.",
+          "id": 1753010004864,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100632",
+      "title": "JavaScript",
+      "description": "Learn JavaScript fundamentals and DOM manipulation for dynamic web applications.",
+      "tags": [
+        "frontend",
+        "scripting",
+        "web"
+      ],
+      "cards": [
+        {
+          "question": "What is a closure in JavaScript?",
+          "answer": "A closure is a function having access to the parent scope, even after the parent function has closed.",
+          "id": 1753010004932,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What does 'this' refer to in JavaScript?",
+          "answer": "'this' refers to the object that is executing the current function.",
+          "id": 1753010005006,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is event delegation?",
+          "answer": "Event delegation is a technique involving adding a single event listener to a parent element.",
+          "id": 1753010005075,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100673",
+      "title": "HTML & CSS",
+      "description": "Build beautiful web pages using semantic HTML and modern CSS.",
+      "tags": [
+        "frontend",
+        "design",
+        "layout"
+      ],
+      "cards": [
+        {
+          "question": "What is the purpose of the alt attribute in images?",
+          "answer": "It provides alternative text for an image if it cannot be displayed.",
+          "id": 1753010005154,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is the difference between id and class in CSS?",
+          "answer": "id is unique per page, while class can be used multiple times.",
+          "id": 1753010005231,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is flexbox in CSS?",
+          "answer": "A CSS layout module that makes it easier to design flexible responsive layout structure.",
+          "id": 1753010005302,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100733",
+      "title": "React",
+      "description": "Learn to build fast, interactive user interfaces with React.",
+      "tags": [
+        "frontend",
+        "library",
+        "JavaScript"
+      ],
+      "cards": [
+        {
+          "question": "What is JSX?",
+          "answer": "JSX is a syntax extension for JavaScript that looks similar to XML or HTML.",
+          "id": 1753010005412,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What are hooks in React?",
+          "answer": "Hooks are functions that let you use state and other React features without writing a class.",
+          "id": 1753010005489,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is useEffect used for?",
+          "answer": "useEffect is used to perform side effects in function components.",
+          "id": 1753010005551,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100700",
+      "title": "SQL",
+      "description": "Learn to manage and query relational databases with SQL.",
+      "tags": [
+        "database",
+        "backend",
+        "data"
+      ],
+      "cards": [
+        {
+          "question": "What does SQL stand for?",
+          "answer": "Structured Query Language.",
+          "id": 1753010006000,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is a primary key?",
+          "answer": "A unique identifier for each record in a table.",
+          "id": 1753010006001,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is the purpose of the JOIN clause?",
+          "answer": "It combines rows from two or more tables based on a related column.",
+          "id": 1753010006002,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100750",
+      "title": "MongoDB",
+      "description": "Learn to work with NoSQL databases using MongoDB.",
+      "tags": [
+        "NoSQL",
+        "database",
+        "backend"
+      ],
+      "cards": [
+        {
+          "question": "What type of database is MongoDB?",
+          "answer": "MongoDB is a NoSQL document database.",
+          "id": 1753010006003,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is a collection in MongoDB?",
+          "answer": "A collection is a group of MongoDB documents.",
+          "id": 1753010006004,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "How is data stored in MongoDB?",
+          "answer": "Data is stored in BSON format, a binary representation of JSON.",
+          "id": 1753010006005,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100800",
+      "title": "Angular",
+      "description": "Build scalable web applications using Angular framework.",
+      "tags": [
+        "frontend",
+        "framework",
+        "TypeScript"
+      ],
+      "cards": [
+        {
+          "question": "What is Angular?",
+          "answer": "A TypeScript-based front-end web application framework.",
+          "id": 1753010006006,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is a component in Angular?",
+          "answer": "A component controls a patch of screen called a view.",
+          "id": 1753010006007,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is data binding in Angular?",
+          "answer": "Data binding is the connection between the component and the DOM.",
+          "id": 1753010006008,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100850",
+      "title": "Firebase",
+      "description": "Use Firebase to build and scale apps with real-time databases and authentication.",
+      "tags": [
+        "backend",
+        "database",
+        "auth"
+      ],
+      "cards": [
+        {
+          "question": "What is Firebase?",
+          "answer": "A platform by Google for building web and mobile applications.",
+          "id": 1753010006009,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is Firestore?",
+          "answer": "A flexible, scalable NoSQL cloud database to store and sync data.",
+          "id": 1753010006010,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "How does Firebase Authentication work?",
+          "answer": "It provides backend services to authenticate users using only client-side code.",
+          "id": 1753010006011,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100777",
+      "title": "Next.js",
+      "description": "Learn to build optimized and scalable React apps with server-side rendering using Next.js.",
+      "tags": [
+        "React",
+        "SSR",
+        "frontend"
+      ],
+      "cards": [
+        {
+          "question": "What is server-side rendering (SSR)?",
+          "answer": "SSR is rendering a web page on the server instead of the browser.",
+          "id": 1753010005201,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What file defines routes in Next.js?",
+          "answer": "The 'pages' directory defines routing in Next.js.",
+          "id": 1753010005317,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is getStaticProps?",
+          "answer": "getStaticProps allows you to fetch data at build time for static generation.",
+          "id": 1753010005472,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    },
+    {
+      "id": "1753010100845",
+      "title": "Redis",
+      "description": "Understand how Redis is used for caching, session management, and real-time analytics.",
+      "tags": [
+        "database",
+        "cache",
+        "backend"
+      ],
+      "cards": [
+        {
+          "question": "What is Redis?",
+          "answer": "Redis is an in-memory key-value data store used for caching and fast data retrieval.",
+          "id": 1753010005551,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What data structures does Redis support?",
+          "answer": "Strings, Lists, Sets, Hashes, Sorted Sets, Bitmaps, and HyperLogLogs.",
+          "id": 1753010005649,
+          "favorite": false,
+          "isReviewed": false
+        },
+        {
+          "question": "What is the use of TTL in Redis?",
+          "answer": "TTL defines the time to live for a key before it expires.",
+          "id": 1753010005723,
+          "favorite": false,
+          "isReviewed": false
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "test@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "1",
+      "email": "sathwikalucky23@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "",
+      "username": "akshara",
+      "email": "akshara@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "",
+      "username": "khalifd",
+      "email": "qwer@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "1752308432453",
+      "username": "how",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752309281473",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752311097351",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752312308646",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1752312341404",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1752469458898",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "",
+      "username": "sanjana",
+      "email": "sanjana@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752471333681",
+      "username": "sanjana",
+      "email": "sanjana@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752471507177",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "",
+      "username": "jaswanth",
+      "email": "jaswanth@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752486739491",
+      "username": "jashhhhhhhhhhhhhh",
+      "email": "jaswanth@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752728010065",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "",
+      "username": "sathwika",
+      "email": "sathwika67890@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1752897819929",
+      "username": "sathwika",
+      "email": "sathwika67890@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "",
+      "username": "sadwithi",
+      "email": "sadwithi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754294405984",
+      "username": "sadwithi",
+      "email": "sadwithi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754294528027",
+      "username": "sadwithi",
+      "email": "sadwithi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754294651507",
+      "username": "sadwithi",
+      "email": "sadwithi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754294662636",
+      "username": "sadwithi",
+      "email": "sadwithi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754454382669",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "",
+      "username": "allsheneededwaslovee",
+      "email": "rihissss@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754499594517",
+      "username": "allsheneededwaslovee",
+      "email": "rihissss@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754499863688",
+      "username": "punnnuuuu",
+      "email": "rihissss@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "",
+      "username": "harini",
+      "email": "harini@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754501416476",
+      "username": "harini",
+      "email": "harini@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754501457276",
+      "username": "harini",
+      "email": "harini@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754501486076",
+      "username": "harini",
+      "email": "harini@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754503604478",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754503643210",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754503839173",
+      "username": "howlleee",
+      "email": "sathwika@124.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754503997500",
+      "username": "harini",
+      "email": "harini@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754542192732",
+      "username": "harinireddy",
+      "email": "harini@gmail.com",
+      "password": "1234567890"
+    }
+  ],
+  "reports": [
+    {
+      "id": "2c30",
+      "name": "sathwika",
+      "email": "sathwika@gmail.com",
+      "description": "i want more courses"
+    },
+    {
+      "id": "e812",
+      "name": "kohli",
+      "email": "sathwikalucky23@gmail.com",
+      "description": "1234567890"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "50e4",
+      "cardId": 1753010003357,
+      "question": "What is a lambda function in Python?",
+      "answer": "A lambda function is an anonymous function."
+    }
+  ],
+  "sets": [
+    {
+      "id": "1",
+      "title": "Sample Set",
+      "cards": [
+        {
+          "id": 101,
+          "question": "What is HTML?",
+          "answer": "HyperText Markup Language"
+        }
+      ]
+    }
+  ]
+}

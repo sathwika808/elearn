@@ -1,0 +1,40 @@
+<div class="quiz-container" *ngIf="set">
+  <h3 class="quiz-title">Quiz: {{ set.title }}</h3>
+  <p class="quiz-progress">Question {{ currentQuestionIndex + 1 }} of {{ set.cards.length }}</p>
+
+  <div class="quiz-card">
+    <h5 class="quiz-question">{{ currentCard.question }}</h5>
+
+    <div *ngFor="let option of options" class="quiz-option">
+      <input
+        class="quiz-radio"
+        type="radio"
+        [value]="option"
+        name="answer"
+        [checked]="selectedAnswer === option"
+        [disabled]="showAnswer"
+        (change)="selectAnswer(option)"
+      />
+      <label class="quiz-label">
+        {{ option }}
+      </label>
+    </div>
+
+    <!-- ✅ Skip Button (Only before answer is shown) -->
+    <div *ngIf="!showAnswer" class="quiz-actions">
+      <button class="skip-btn" (click)="skip()">Skip</button>
+    </div>
+
+    <!-- ✅ Answer Feedback -->
+    <div *ngIf="showAnswer" class="quiz-answer">
+      <div
+        [class.correct]="selectedAnswer === currentCard.answer"
+        [class.incorrect]="selectedAnswer !== currentCard.answer"
+      >
+        <strong *ngIf="selectedAnswer === currentCard.answer">✅ Correct!</strong>
+        <strong *ngIf="selectedAnswer !== currentCard.answer">❌ Incorrect. Correct Answer: {{ currentCard.answer }}</strong>
+      </div>
+      <button class="next-btn" (click)="next()">Next</button>
+    </div>
+  </div>
+</div>

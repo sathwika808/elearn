@@ -1,0 +1,11 @@
+<div class="report-form-container">
+  <h2>🚩 Report an Issue</h2>
+
+  <form #reportForm="ngForm" (ngSubmit)="submitReport(reportForm)">
+    <input type="text" name="name" [(ngModel)]="report.name" placeholder="Your Name" required />
+    <input type="email" name="email" [(ngModel)]="report.email" placeholder="Your Email" required />
+    <textarea name="description" [(ngModel)]="report.description" placeholder="Describe the issue..." required></textarea>
+    <button type="submit" [disabled]="reportForm.invalid">Submit Report</button>
+  </form>
+</div>
+

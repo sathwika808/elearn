@@ -1,0 +1,168 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <div class="logo">📘 E-Learn</div>
+  </div>
+
+  <div class="navbar-right">
+    <button class="nav-icon"  (click)="refer()">Refer🚀</button>
+    <button class="nav-icon" (click)="bookmark()">🔖Bookmarks</button>
+    <div class="profile-info">
+     <button class="profile-icon-btn"  (click)="goToProfile()">
+  <img
+    class="profile-pic"
+    src="https://img.icons8.com/ios-filled/50/user-male-circle.png"
+    alt="Profile"
+  />
+</button>
+
+
+      <span class="username">Hi {{username}}</span>
+    </div>
+    <button class="logout-btn" (click)="onlogout()">Logout</button>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="overlay">
+    <div class="content-container">
+      <div class="hero-text">
+        <h1>Learn. Grow. Conquer!</h1>
+        <p class="subtitle">Empowering curious minds to become tomorrow’s tech leaders</p>
+        <p class="description">
+          Discover a smarter way to learn — anywhere, anytime. With our advanced
+          E-Learning platform, your success is just one course away.
+        </p>
+      </div>
+
+      <div class="advantages">
+        <div class="advantage-card">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/laptop.png" />
+          <h3>Learn Anywhere</h3>
+          <p>Access courses 24/7 from any device — mobile, tablet, or desktop.</p>
+        </div>
+        <div class="advantage-card">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/classroom.png" />
+          <h3>Expert Instructors</h3>
+          <p>Gain insights from industry professionals with real-world experience.</p>
+        </div>
+        <div class="advantage-card">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/time.png" />
+          <h3>Self-Paced</h3>
+          <p>Learn at your own speed with flexible schedules and recorded sessions.</p>
+        </div>
+        <div class="advantage-card">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/certificate.png" />
+          <h3>Certified Courses</h3>
+          <p>Get recognized certificates to boost your resume and career growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div #sectionRef>
+    <div *ngIf="showSection" @fadeUp class="learning-intro-section-container">
+      <h1 class="learning-intro-section-heading">
+        One platform, endless e-learning possibilities
+      </h1>
+      <p class="learning-intro-section-subtext">
+        See why every Fortune 100 company relies on
+        <span class="highlight-word">Articulate</span><br />
+        to create workplace training.
+      </p>
+    </div>
+  </div>
+
+
+<!-- Course Search + Add Question -->
+<div class="course-search-add">
+  <input
+    type="search"
+    class="custom-input"
+    placeholder="Search the course you are interested in"
+    [(ngModel)]="searchTerm"
+     (input)="onSearch()"
+  />
+  
+</div>
+
+
+<h1 class="course-heading">
+  Here are the courses
+  <span class="arrow-down">▼</span>
+</h1>
+
+  <div class="carousel-outer">
+    <div class="carousel-inner">
+      <button class="nav-button left" (click)="scrollLeft()">&#10094;</button>
+
+      <div class="carousel-container">
+        <div class="carousel-wrapper" #carousel>
+          <div class="course-carousel">
+            <div class="course-card" *ngFor="let course of filteredCourses">
+  <h2>{{ course.title }}</h2>
+  <p>{{ course.description }}</p>
+  <!-- Progress Bar -->
+<div class="custom-progress">
+  <div
+    class="custom-progress-bar"
+    [style.width.%]="getProgress(course.cards)"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  ></div>
+</div>
+
+<div class="review-status">
+  {{ countReviewed(course.cards) }} of {{ course.cards.length }} reviewed ({{ getProgress(course.cards) }}%)
+</div>
+
+  <div class="card-buttons">
+    <button (click)="viewStudy(course.id)">📘 Study</button>
+    <button (click)="startQuiz(course.id)">❓ Quiz</button>
+    <button (click)="dontsuggest(course.id)">❌ Don't Suggest</button>
+   <button (click)="navigateToAddQuestion(course.id)">➕ Add Question</button>
+
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-button right" (click)="scrollRight()">&#10095;</button>
+    </div>
+  </div>
+
+
+
+<div class="feedback-background">
+
+  <div class="feedback-form-container">
+  <h2>💬 Send Us Your Feedback</h2>
+
+  <form #feedbackForm="ngForm" (ngSubmit)="onsubmit(feedbackForm)">
+    <input type="text" name="name" [(ngModel)]="feedback.name" placeholder="Your Name" required>
+    <input type="email" name="email" [(ngModel)]="feedback.email" placeholder="Your Email" required>
+    <textarea name="message" [(ngModel)]="feedback.message" placeholder="Your Message" required></textarea>
+    <select name="rating" [(ngModel)]="feedback.rating" required>
+      <option value="" disabled selected>Rate us</option>
+      <option *ngFor="let r of [1,2,3,4,5]" [value]="r">{{r}} ★</option>
+    </select>
+   <button type="submit" class="button" [disabled]="feedbackForm.invalid">Submit</button>
+
+  </form>
+</div>
+<DIV  class="issue-container"> 
+  <H1>Having an issue??? </H1>
+  <button (click)="report()" class="report-btn">Report Issue</button>
+
+</DIV>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,39 @@
+.report-form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.report-form-container h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.report-form-container input,
+.report-form-container textarea {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.report-form-container button {
+  width: 100%;
+  background-color: #e53935;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.report-form-container button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}

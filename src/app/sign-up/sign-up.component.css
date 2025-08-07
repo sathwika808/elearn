@@ -1,0 +1,59 @@
+.signup-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  text-align: center;
+  color: #4a80f0;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  background: #4a80f0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
+.link-style {
+  color: #00b7ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+
+  /* ✅ Add spacing around the link */
+  display: inline-block;       /* Required for margin to behave as expected */
+  margin-top: 12px;            /* Adjust as needed */
+  margin-bottom: 8px;
+}
+
+.link-style:hover {
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+.link-style:focus {
+  outline: 2px solid #0077cc;
+  outline-offset: 2px;
+}
+
+.link-style:active {
+  color: #004d99;
+}

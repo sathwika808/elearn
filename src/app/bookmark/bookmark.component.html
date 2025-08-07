@@ -1,0 +1,20 @@
+<div class="bookmark-container">
+  <h2 class="bookmark-title">🔖 Your Bookmarked Flashcards</h2>
+
+  <div *ngIf="bookmarks.length === 0" class="no-bookmarks">
+    <p>No bookmarks yet. Start adding from flashcards!</p>
+  </div>
+
+  <div *ngFor="let card of bookmarks" class="bookmark-card">
+    <h4 class="bookmark-question">{{ card.question }}</h4>
+    <p class="bookmark-answer">{{ card.answer }}</p>
+
+    <button class="remove-btn" (click)="removeBookmark(card.id)">
+      <span class="trash-icon">🗑️</span> Remove
+    </button>
+    <div class="toast" *ngIf="showToast">
+  🗑️ Bookmark removed successfully!
+</div>
+
+  </div>
+</div>
