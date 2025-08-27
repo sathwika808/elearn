@@ -12,8 +12,8 @@ import { User } from '../../models';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
-user: User = { id: '', username: '', email: '', password: '' };
-  originalUser: User = { id: '', username: '', email: '', password: '' };
+user: User = { id: 0, username: '', email: '', password: '' };
+  originalUser: User = { id: 0, username: '', email: '', password: '' };
   isEditing = false;
 
   constructor(private mainService: MainserviceService, private http: HttpClient) {}
@@ -38,32 +38,17 @@ user: User = { id: '', username: '', email: '', password: '' };
     this.isEditing = true;
   }
 saveChanges() {
-  console.log('Trying to save...');
-  console.log('User ID:', this.user.id);
-
-  // Check for changes
-  const hasChanges =
-    this.user.username !== this.originalUser.username ||
-    this.user.email !== this.originalUser.email ||
-    this.user.password !== this.originalUser.password;
-
-  if (!hasChanges) {
-    alert('No changes detected.');
-    this.isEditing = false;
-    return;
-  }
-
   if (!this.user.id) {
     alert('User ID is missing. Cannot update.');
     return;
   }
 
-  this.http.patch(`http://localhost:3000/users/${this.user.id}`, this.user).subscribe({
-    next: () => {
+  this.mainService.updateUser(this.user.id, this.user).subscribe({
+    next: (updatedUser) => {
       alert('Profile updated successfully!');
-      this.originalUser = { ...this.user };
-      this.mainService.setLoggedInUser(this.user);
-      localStorage.setItem('user', JSON.stringify(this.user));
+      this.originalUser = { ...updatedUser }; // keep latest state
+      this.mainService.setLoggedInUser(updatedUser);
+      localStorage.setItem('user', JSON.stringify(updatedUser));
       this.isEditing = false;
     },
     error: (err) => {
@@ -72,5 +57,6 @@ saveChanges() {
     }
   });
 }
+
 
 }

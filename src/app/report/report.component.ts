@@ -18,12 +18,29 @@ report = {
 
   constructor(private http: HttpClient) {}
 
-  submitReport(form: NgForm) {
-    if (form.valid) {
-      this.http.post('http://localhost:3000/reports', this.report).subscribe(() => {
-        alert('Issue reported successfully!');
-        form.resetForm();
-      });
+  // submitReport(form: NgForm) {
+  //   if (form.valid) {
+  //     this.http.post('http://localhost:60831/api/Report', this.report).subscribe(() => {
+  //       alert('Issue reported successfully!');
+  //       form.resetForm();
+  //     });
+  //   }
+  // }
+submitReport(form: NgForm) {
+  if (form.valid) {
+    this.http.post('http://localhost:60831/api/Report', this.report, { responseType: 'text' })
+  .subscribe({
+    next: (res) => {
+      alert('Issue reported successfully!');
+      form.resetForm(); // clears the form completely
+    },
+    error: (err) => {
+      console.error('Error:', err);
     }
+  });
+
   }
+}
+
+
 }

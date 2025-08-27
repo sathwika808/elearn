@@ -266,23 +266,30 @@ export class MainComponent {
     private flashserv: FlashcardServiceService
   ) {}
 
-  onsubmit(form: NgForm) {
-    if (form.invalid) return;
-    this.service.submitFeedback(this.feedback).subscribe(() => {
-      console.log('submitted feedback');
-      this.reset();
-    });
-  }
+onsubmit(form: NgForm) {
+  if (form.invalid) return;
 
-  onlogout() {
+  this.service.submitFeedback(this.feedback).subscribe({
+    next: () => {
+      console.log('submitted feedback');
+      this.reset(form);
+    },
+    error: (err) => {
+      console.error('Error submitting feedback:', err);
+    }
+  });
+}
+
+reset(form: NgForm) {
+  this.feedback = { name: '', email: '', message: '', rating: '' };
+  form.resetForm(); // <-- clears inputs + resets form state
+}
+
+
+    onlogout() {
     alert('do you want to logout');
     this.router.navigate(['login']);
   }
-
-  reset() {
-    this.feedback = { name: '', email: '', message: '', rating: '' };
-  }
-
   courses: any[] = [];
   filteredCourses: any[] = [];
   searchTerm: string = '';
@@ -317,8 +324,11 @@ export class MainComponent {
     );
   }
 
+
   viewStudy(courseId: number) {
-    this.router.navigate(['study', courseId]);
+    console.log(courseId);
+    
+    this.router.navigate(['/study', courseId]);
   }
 
   startQuiz(courseId: number) {

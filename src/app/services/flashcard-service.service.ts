@@ -7,8 +7,7 @@ import { card, Flashcard } from '../../models';
   providedIn: 'root'
 })
 export class FlashcardServiceService {
-  private setsUrl = 'http://localhost:3000/courses';   // for flashcard sets
-  private bookmarksUrl = 'http://localhost:3000/bookmarks'; // for bookmarks
+  private setsUrl = 'http://localhost:60831/api/Course';   // for flashcard sets
 
   constructor(private http: HttpClient) {}
 
@@ -24,28 +23,33 @@ export class FlashcardServiceService {
 
   // 🔹 Delete a flashcard set (if needed)
   deleteSet(id: string): Observable<any> {
-    return this.http.delete(`${this.setsUrl}/${id}`);
+    return this.http.delete(`http://localhost:60831/api/Course/${id}`);
   }
 
   // ✅ Server-based Bookmark System
+  private bookmarksUrl = 'http://localhost:60831/api/BookMark'; // ⚡ use your .NET port
 
-  // GET all bookmarks from server
+
+  // ✅ GET all bookmarks from server
   getBookmarksFromServer(): Observable<any[]> {
     return this.http.get<any[]>(this.bookmarksUrl);
   }
 
-  // Add a new bookmark (POST)
-  addBookmarkToServer(bookmark: { cardId: number; question: string; answer: string }): Observable<any> {
+  // ✅ Add a new bookmark (POST)
+  addBookmarkToServer(bookmark: { cardId: number }): Observable<any> {
     return this.http.post<any>(this.bookmarksUrl, bookmark);
   }
 
-  // Remove a bookmark by ID (DELETE)
+  // ✅ Remove a bookmark by ID (DELETE)
   removeBookmarkFromServer(bookmarkId: number): Observable<any> {
     return this.http.delete(`${this.bookmarksUrl}/${bookmarkId}`);
   }
-
-  deleteBookmark(id: number) {
-  return this.http.delete(`http://localhost:3000/bookmarks/${id}`);
+// ✅ Toggle (Add/Remove Bookmark)
+toggleBookmarkOnServer(bookmark: { cardId: number }): Observable<{ id: number | null, isBookmarked: boolean }> {
+  return this.http.post<{ id: number | null, isBookmarked: boolean }>(
+    `${this.bookmarksUrl}/toggle`,
+    bookmark
+  );
 }
 
 }

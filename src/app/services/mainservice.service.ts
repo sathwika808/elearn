@@ -7,20 +7,21 @@ import { User } from '../../models';
   providedIn: 'root'
 })
 export class MainserviceService {
-private url = "http://localhost:3000/courses"
+private url =  'http://localhost:60831/api/Course'
+
   constructor(private http:HttpClient) { }
   getCourses() {
   return this.http.get<any[]>(this.url);
 }
 
 getCourseById(id: number) {
-  return this.http.get<any>(`${this.url}/${id}`);
+  return this.http.get<any>(`http://localhost:60831/api/Course/${id}`);
 }
- private baseUrl = 'http://localhost:3000/users';
-private apiUrl='http://localhost:3000/users'
+ private baseUrl = "http://localhost:60831/api/User";
+private apiUrl=`http://localhost:60831/api/User`
  
 
-  register(user: User): Observable<User> {
+  register(user: User): Observable<any> {
     return this.http.post<User>(this.baseUrl, user);
   }
 login(email: string, password: string): Observable<User | null> {
@@ -41,9 +42,10 @@ login(email: string, password: string): Observable<User | null> {
     return this.http.get<User[]>(this.apiUrl);
   }
 
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
-  }
+addUser(user: User): Observable<any> {
+  return this.http.post(this.apiUrl, user, { responseType: 'text' });
+}
+
 private loggedInUser: any = null;
 
 setLoggedInUser(user: any) {
@@ -53,8 +55,9 @@ setLoggedInUser(user: any) {
 getLoggedInUser() {
   return this.loggedInUser;
 } 
-updateUser(id: string, user: User): Observable<User> {
+updateUser(id: number, user: User): Observable<User> {
   return this.http.patch<User>(`${this.apiUrl}/${id}`, user);
 }
+
 
 }

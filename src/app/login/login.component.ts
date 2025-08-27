@@ -36,8 +36,8 @@ export class LoginComponent {
 
         if (foundUser) {
           // ✅ If user has no ID, assign one and update db.json
-          if (!foundUser.id || foundUser.id === '') {
-            foundUser.id = Date.now().toString();
+          if (!foundUser.id || foundUser.id === 0) {
+            foundUser.id +=1 ;
             this.userService.addUser(foundUser).subscribe(() => {
               console.log('User with new ID created in db.json');
             });

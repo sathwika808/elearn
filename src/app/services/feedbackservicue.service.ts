@@ -8,11 +8,11 @@ import { Feedback } from '../../models';
 })
 export class FeedbackservicueService {
 
-   private apiUrl = 'http://localhost:3000/feedback';
+   private apiUrl = 'http://localhost:60831/api/FeedBack';
 
   constructor(private http: HttpClient) {}
 
-  submitFeedback(feedback: Feedback): Observable<Feedback> {
-    return this.http.post<Feedback>(this.apiUrl, feedback);
+  submitFeedback(feedback: any) {
+    return this.http.post(this.apiUrl, feedback, { responseType: 'text' });
   }
 }

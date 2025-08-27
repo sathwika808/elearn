@@ -118,14 +118,14 @@ body {
   transform: translateY(-1px);
 }
 
-/* Hero Section - Fixed */
+/* Hero Section - Updated to Full Screen */
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
               url('https://media.istockphoto.com/id/1439425791/photo/digital-technology-software-development-concept-coding-programmer-working-on-laptop-with.jpg?s=612x612&w=0&k=20&c=43WZfDZcnI2lULx83NVAtFiGyzKHzi4HyLqYZgggX-c=');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  min-height: 100vh; /* Full viewport height */
   color: white;
   display: flex;
   justify-content: center;
@@ -528,21 +528,104 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* Enhanced Responsive Styles */
-@media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-  
-  .advantage-card {
-    max-width: 220px;
-  }
-  
-  .navbar-right {
-    gap: 1rem;
-  }
+.footer {
+  background: #ffffff;
+  color: #555;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 }
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.footer-section {
+  max-width: 250px;
+}
+
+.footer-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.footer-section a {
+  display: block;
+  color: #777;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #4f46e5;
+}
+
+.social-icons a {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #777;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4f46e5;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+  color: #888;
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;         /* space between image and text */
+  background: none; /* remove background */
+  box-shadow: none; /* remove any shadow */
+  border: none;     /* just in case */
+}
+
+.profile-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.profile-btn img {
+  width: 40px;      /* adjust size */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  color: #fff; /* or whatever text color you want */
+  font-size: 16px;
+}
+
 
 @media (max-width: 900px) {
   .navbar {

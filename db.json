@@ -45,42 +45,6 @@
   ],
   "courses": [
     {
-      "id": "1753010100145",
-      "title": "Python",
-      "description": "Learn about Python fundamentals, best practices, and applications.",
-      "tags": [
-        "backend",
-        "scripting",
-        "automation"
-      ],
-      "cards": [
-        {
-          "question": "What is a lambda function in Python?",
-          "answer": "A lambda function is an anonymous function.",
-          "id": 1753010003357,
-          "favorite": true,
-          "isReviewed": true,
-          "bookmarkEntryId": "50e4"
-        },
-        {
-          "question": "What is PEP 8?",
-          "answer": "PEP 8 is the style guide for writing Python code.",
-          "id": 1753010003497,
-          "favorite": false,
-          "isReviewed": true,
-          "bookmarkEntryId": null
-        },
-        {
-          "question": "What is list comprehension?",
-          "answer": "A concise way to create lists using a single line of code.",
-          "id": 1753010003604,
-          "favorite": true,
-          "isReviewed": true,
-          "bookmarkEntryId": "3b09"
-        }
-      ]
-    },
-    {
       "id": "1753010100237",
       "title": "Java",
       "description": "Learn about Java fundamentals, best practices, and applications.",
@@ -94,22 +58,25 @@
           "question": "What is JVM?",
           "answer": "JVM stands for Java Virtual Machine.",
           "id": 1753010003717,
-          "favorite": false,
-          "isReviewed": false
+          "favorite": true,
+          "isReviewed": true,
+          "bookmarkEntryId": "e019"
         },
         {
           "question": "What is inheritance in Java?",
           "answer": "Inheritance allows a class to inherit features from another class.",
           "id": 1753010003833,
-          "favorite": false,
-          "isReviewed": false
+          "favorite": true,
+          "isReviewed": true,
+          "bookmarkEntryId": "25cf"
         },
         {
           "question": "What is a constructor?",
           "answer": "A special method used to initialize objects.",
           "id": 1753010003987,
           "favorite": false,
-          "isReviewed": false
+          "isReviewed": false,
+          "bookmarkEntryId": null
         }
       ]
     },
@@ -739,6 +706,54 @@
       "username": "harinireddy",
       "email": "harini@gmail.com",
       "password": "1234567890"
+    },
+    {
+      "id": "",
+      "username": "rishi",
+      "email": "rishi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754557244997",
+      "username": "rishima",
+      "email": "rishi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "",
+      "username": "rishika",
+      "email": "rishika@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754561170527",
+      "username": "rishima",
+      "email": "rishika@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1754980656390",
+      "username": "sathwika",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1754981033573",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1755061998250",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1755145775524",
+      "username": "sathwikaaaaaaaaaa",
+      "email": "sathwika@gmail.com",
+      "password": "123456789"
     }
   ],
   "reports": [
@@ -757,23 +772,22 @@
   ],
   "bookmarks": [
     {
-      "id": "50e4",
-      "cardId": 1753010003357,
-      "question": "What is a lambda function in Python?",
-      "answer": "A lambda function is an anonymous function."
-    }
-  ],
-  "sets": [
+      "id": "5290",
+      "cardId": 1753010003497,
+      "question": "What is PEP 8?",
+      "answer": "PEP 8 is the style guide for writing Python code."
+    },
     {
-      "id": "1",
-      "title": "Sample Set",
-      "cards": [
-        {
-          "id": 101,
-          "question": "What is HTML?",
-          "answer": "HyperText Markup Language"
-        }
-      ]
+      "id": "e019",
+      "cardId": 1753010003717,
+      "question": "What is JVM?",
+      "answer": "JVM stands for Java Virtual Machine."
+    },
+    {
+      "id": "25cf",
+      "cardId": 1753010003833,
+      "question": "What is inheritance in Java?",
+      "answer": "Inheritance allows a class to inherit features from another class."
     }
   ]
 }

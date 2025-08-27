@@ -1,53 +1,8 @@
-<!-- <div class="container mt-5 text-center" *ngIf="!hasError && set; else noSet">
-  <h3>{{ set.title }}</h3>
-
-  <div *ngIf="set.cards.length > 0; else emptySet">
-    <div
-      class="card-container mx-auto my-4"
-      style="width: 300px; height: 200px; perspective: 1000px;"
-      (click)="flip()"
-    >
-      <div class="card-flip" [class.card-flipped]="isFlipped">
-        <div class="card-face card-front">
-          {{ currentCard.question }}
-        </div>
-        <div class="card-face card-back">
-          {{ currentCard.answer }}
-        </div>
-      </div>
-    </div>
-
-    <button class="btn btn-outline-danger m-2" (click)="toggleFavorite(currentCard)">
-      <span *ngIf="currentCard.favorite"><i class="bi bi-bookmark"></i>  Bookmark</span>
-      <span *ngIf="!currentCard.favorite"><i class="bi bi-bookmark-fill">  Bookmarked</i> </span>
-    </button>
-
-    <div>
-      <button class="btn btn-primary m-2" (click)="flip()">Flip</button>
-      <button class="btn btn-secondary m-2" (click)="prevCard()">Prev</button>
-      <button class="btn btn-secondary m-2" (click)="nextCard()">Next</button>
-    </div>
-  </div>
-</div>
-
-<ng-template #noSet>
-  <div class="text-center mt-5">
-    <h4>Flashcard Set Not Found 😞</h4>
-    <p>Make sure the set ID exists in the database.</p>
-  </div>
-</ng-template>
-
-<ng-template #emptySet>
-  <div class="text-center mt-3">
-    <p>No cards in this set.</p>
-  </div>
-</ng-template> -->
-<div class="flashcard-wrapper" *ngIf="!hasError && set; else noSet">
+<!-- <div class="flashcard-wrapper" *ngIf="!hasError && set; else noSet">
   <h3 class="set-title">{{ set.title }}</h3>
 
-  <div *ngIf="set.cards.length > 0; else emptySet">
+  <ng-container *ngIf="currentCard; else emptySet">
 
-    <!-- ✅ Added this wrapper to keep layout clean -->
     <div class="card-area">
       <div class="card-container" (click)="flip()">
         <div class="card-flip" [class.card-flipped]="isFlipped">
@@ -60,36 +15,78 @@
         </div>
       </div>
 
-     <!-- Bookmark Button -->
-<button class="bookmark-btn" (click)="toggleFavorite(currentCard)">
-  <span *ngIf="!currentCard.favorite">
-    <i class="bi bi-bookmark"></i> Bookmark
-  </span>
-  <span *ngIf="currentCard.favorite">
-    <i class="bi bi-bookmark-fill"></i> Bookmarked
-  </span>
-</button>
-
+      <button class="bookmark-btn" (click)="toggleFavorite(currentCard)">
+        <span *ngIf="!currentCard.favorite">
+          <i class="bi bi-bookmark"></i> Bookmark
+        </span>
+        <span *ngIf="currentCard.favorite">
+          <i class="bi bi-bookmark-fill"></i> Bookmarked
+        </span>
+      </button>
     </div>
-    <!-- ✅ End of new wrapper -->
 
     <div class="action-buttons">
-      <button class="flip-btn" (click)="flip()">Flip</button>
-      <button class="nav-btn" (click)="prevCard()">Prev</button>
-      <button class="nav-btn" (click)="nextCard()">Next</button>
+      <button (click)="prevCard()">⬅ Prev</button>
+      <button (click)="flip()">🔄 Flip</button>
+      <button (click)="nextCard()">Next ➡</button>
     </div>
-  </div>
+  </ng-container>
+</div> -->
+
+<!-- <ng-template #noSet>
+  <p>⚠ No set found.</p>
+</ng-template> -->
+
+<!-- <ng-template #emptySet>
+  <p>⚠ This set has no cards.</p>
+</ng-template> -->
+
+
+
+<div class="flashcard-wrapper" *ngIf="!hasError && set; else noSet">
+  <h3 class="set-title">{{ set.title }}</h3>
+
+  <!-- If set has cards -->
+  <ng-container *ngIf="set?.cards?.length > 0; else emptySet">
+
+    <div class="card-area">
+      <div class="card-container" (click)="flip()">
+        <div class="card-flip" [class.card-flipped]="isFlipped">
+          <!-- Front -->
+          <div class="card-face card-front">
+            {{ set.cards[currentIndex].question }}
+          </div>
+          <!-- Back -->
+          <div class="card-face card-back">
+            {{ set.cards[currentIndex].answer }}
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ Bookmark button (uses real backend card.id) -->
+      <button class="bookmark-btn" (click)="toggleFavorite(set.cards[currentIndex])">
+        <span *ngIf="!set.cards[currentIndex].favorite">
+          <i class="bi bi-bookmark"></i> Bookmark
+        </span>
+        <span *ngIf="set.cards[currentIndex].favorite">
+          <i class="bi bi-bookmark-fill"></i> Bookmarked
+        </span>
+      </button>
+    </div>
+
+    <div class="action-buttons">
+      <button (click)="prevCard()">⬅ Prev</button>
+      <button (click)="flip()">🔄 Flip</button>
+      <button (click)="nextCard()">Next ➡</button>
+    </div>
+  </ng-container>
 </div>
 
+<!-- Fallbacks -->
 <ng-template #noSet>
-  <div class="message-container">
-    <h4>Flashcard Set Not Found 😞</h4>
-    <p>Make sure the set ID exists in the database.</p>
-  </div>
+  <p>⚠ No set found.</p>
 </ng-template>
 
 <ng-template #emptySet>
-  <div class="message-container">
-    <p>No cards in this set.</p>
-  </div>
+  <p>⚠ This set has no cards.</p>
 </ng-template>

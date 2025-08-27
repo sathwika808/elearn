@@ -7,13 +7,13 @@
     <button class="nav-icon"  (click)="refer()">Refer🚀</button>
     <button class="nav-icon" (click)="bookmark()">🔖Bookmarks</button>
     <div class="profile-info">
-     <button class="profile-icon-btn"  (click)="goToProfile()">
+   <button (click)="goToProfile()" class="profile-btn">
   <img
-    class="profile-pic"
-    src="https://img.icons8.com/ios-filled/50/user-male-circle.png"
+    src="https://www.shutterstock.com/image-photo/happy-attractive-african-business-leader-600nw-2451794349.jpg"
     alt="Profile"
   />
 </button>
+
 
 
       <span class="username">Hi {{username}}</span>
@@ -119,10 +119,10 @@
 </div>
 
   <div class="card-buttons">
-    <button (click)="viewStudy(course.id)">📘 Study</button>
-    <button (click)="startQuiz(course.id)">❓ Quiz</button>
-    <button (click)="dontsuggest(course.id)">❌ Don't Suggest</button>
-   <button (click)="navigateToAddQuestion(course.id)">➕ Add Question</button>
+    <button (click)="viewStudy(course.courseId)">📘 Study</button>
+    <button (click)="startQuiz(course.courseId)">❓ Quiz</button>
+    <button (click)="dontsuggest(course.courseId)">❌ Don't Suggest</button>
+   <button (click)="navigateToAddQuestion(course.courseId)">➕ Add Question</button>
 
   </div>
 </div>
@@ -160,7 +160,44 @@
 
 </DIV>
 
-</div>
+</div> 
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section brand">
+      <h2>E-Learn</h2>
+      <p>Empowering learners worldwide with interactive courses and engaging content.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 E-Learn. All rights reserved.
+  </div>
+</footer>
+
+<!-- Font Awesome -->
+
+
+
+
 
 
 

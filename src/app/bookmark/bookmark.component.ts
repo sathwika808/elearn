@@ -27,7 +27,7 @@ removeBookmark(id: number): void {
   const confirmDelete = confirm('Are you sure you want to remove this bookmark?');
 
   if (confirmDelete) {
-    this.bookmarkService.deleteBookmark(id).subscribe(() => {
+    this.bookmarkService.removeBookmarkFromServer(id).subscribe(() => {
       this.bookmarks = this.bookmarks.filter(card => card.id !== id);
       this.showToast = true;
 
@@ -36,11 +36,11 @@ removeBookmark(id: number): void {
       }, 3000);
     });
   }
-  this.bookmarkService.deleteBookmark(id).subscribe(() => {
+  this.bookmarkService.removeBookmarkFromServer(id).subscribe(() => {
     this.bookmarks = this.bookmarks.filter(card => card.id !== id);
     this.showToast = true;
 
-    // Auto-hide after 3 seconds
+    // Auto-hide after 3 secondsii
     setTimeout(() => {
       this.showToast = false;
     }, 3000);

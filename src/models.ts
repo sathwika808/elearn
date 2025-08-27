@@ -5,6 +5,7 @@ export interface Feedback {
   rating: string;
 }
 export interface Flashcard{
+  IsReviewed: any;
   id: number;
   question: string;
   answer: string;
@@ -23,7 +24,7 @@ export interface card{
 }
 
 export interface User {
-  id: string;
+  id: number;
   username: string;
   email: string;
   password: string;

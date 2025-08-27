@@ -11,35 +11,34 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './addques.component.css'
 })
 export class AddquesComponent {
-courseId!: string;
+  courseId!: number;
   question = '';
   answer = '';
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit() {
-    this.courseId = this.route.snapshot.paramMap.get('id')!;
+    // Get courseId from route params
+    this.courseId = Number(this.route.snapshot.paramMap.get('id'));
   }
 
-  submitQuestion() {
-    const newCard = {
-      id: Date.now(),
-      question: this.question,
-      answer: this.answer,
-      favorite: false
-    };
+submitQuestion() {
+  const newCard = {
+    question: this.question,
+    answer: this.answer,
+    favorite: false,
+    isReviewed: false,
+  
+    courseId: this.courseId
+  };
 
-    this.http.get<any[]>(`http://localhost:3000/courses?id=${this.courseId}`)
-      .subscribe((courses) => {
-        const course = courses[0];
-        course.cards.push(newCard);
-        this.http.patch(`http://localhost:3000/courses/${this.courseId}`, { cards: course.cards })
-          .subscribe(() => alert('✅ Question added successfully!'));
-          this.reset()
-      });
-  }
-reset(){
-  this.question=''
-  this.answer=''
+  this.http.post('http://localhost:60831/api/Card', newCard, { responseType: 'text' })
+    .subscribe(() => {
+      alert("Card added");
+      // ✅ reset fields manually
+      this.question = '';
+      this.answer = '';
+    });
 }
+
 }
