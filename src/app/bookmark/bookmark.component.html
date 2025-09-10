@@ -8,7 +8,7 @@
   <div *ngFor="let card of bookmarks" class="bookmark-card">
     <h4 class="bookmark-question">{{ card.question }}</h4>
     <p class="bookmark-answer">{{ card.answer }}</p>
-
+    <p class="bookmark-answer">{{card.cardId}}</p>
     <button class="remove-btn" (click)="removeBookmark(card.id)">
       <span class="trash-icon">🗑️</span> Remove
     </button>

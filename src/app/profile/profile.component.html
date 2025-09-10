@@ -6,22 +6,22 @@
   <!-- Username -->
   <div class="field">
     <label>Name</label>
-    <div *ngIf="!isEditing" class="readonly">{{ user.username }}</div>
-    <input *ngIf="isEditing" [(ngModel)]="user.username" />
+    <div *ngIf="!isEditing" class="readonly">{{ user?.username }}</div>
+    <input *ngIf="isEditing && user" [(ngModel)]="user.username" />
   </div>
 
   <!-- Email -->
   <div class="field">
     <label>Email</label>
-    <div *ngIf="!isEditing" class="readonly">{{ user.email }}</div>
-    <input *ngIf="isEditing" [(ngModel)]="user.email" type="email" />
+    <div *ngIf="!isEditing" class="readonly">{{ user?.email }}</div>
+    <input *ngIf="isEditing && user" [(ngModel)]="user.email" type="email" />
   </div>
 
   <!-- Password -->
   <div class="field">
     <label>Password</label>
     <div *ngIf="!isEditing" class="readonly">********</div>
-    <input *ngIf="isEditing" [(ngModel)]="user.password" type="password" />
+    <input *ngIf="isEditing && user" [(ngModel)]="user.password" type="password" />
   </div>
 
   <!-- Buttons -->

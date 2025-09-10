@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MainserviceService } from '../services/mainservice.service';
-import { User } from '../../models';
+import { User, UserDto } from '../../models';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,52 +14,32 @@ import { CommonModule } from '@angular/common';
 })
 export class LoginComponent {
   constructor(private ro: Router, private userService: MainserviceService) {}
-
-  user = {
+  // model for form
+  user: UserDto = {
     username: '',
-    password: '',
-    remember: false
+    password: ''
   };
 
   loginError = '';
 
   onSubmit(form: any) {
-    if (form.invalid) {
-      return;
-    }
+    if (form.invalid) return;
 
-    this.userService.getUsers().subscribe(
-      (users: User[]) => {
-        const foundUser = users.find(
-          (u) => u.username === this.user.username && u.password === this.user.password
-        );
+    // call backend to login with jwt
+    this.userService.jwtLogin(this.user).subscribe({
+      next: (response: any) => {
+        console.log('Login successful!', response);
 
-        if (foundUser) {
-          // ✅ If user has no ID, assign one and update db.json
-          if (!foundUser.id || foundUser.id === 0) {
-            foundUser.id +=1 ;
-            this.userService.addUser(foundUser).subscribe(() => {
-              console.log('User with new ID created in db.json');
-            });
-          }
+        // ✅ Save token in localStorage
+        localStorage.setItem('token', response.token);
 
-          // ✅ Always store the latest logged-in user in localStorage
-          localStorage.setItem('user', JSON.stringify(foundUser));
-
-          // ✅ Also store in service memory
-          this.userService.setLoggedInUser(foundUser);
-
-          // ✅ Navigate to main page
-          this.ro.navigate(['/main']);
-        } else {
-          this.loginError = 'Invalid username or password.';
-        }
+        // ✅ Navigate to main page
+        this.ro.navigate(['/main']);
       },
-      (error) => {
-        this.loginError = 'Server error. Please try again later.';
-        console.error('Login fetch error', error);
-      }
-    );
+      error: (err) => {
+        this.loginError = 'Invalid username or password';
+        console.error('Login failed', err);
+      },
+    });
   }
 }
- 

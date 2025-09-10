@@ -23,7 +23,7 @@ export class FlashcardServiceService {
 
   // 🔹 Delete a flashcard set (if needed)
   deleteSet(id: string): Observable<any> {
-    return this.http.delete(`http://localhost:60831/api/Course/${id}`);
+    return this.http.delete(`http://localhost:60831/api/Course/${id}` ,  { responseType: 'text' });
   }
 
   // ✅ Server-based Bookmark System
@@ -42,7 +42,7 @@ export class FlashcardServiceService {
 
   // ✅ Remove a bookmark by ID (DELETE)
   removeBookmarkFromServer(bookmarkId: number): Observable<any> {
-    return this.http.delete(`${this.bookmarksUrl}/${bookmarkId}`);
+    return this.http.delete(`${this.bookmarksUrl}/${bookmarkId}` , { responseType: 'text' });
   }
 // ✅ Toggle (Add/Remove Bookmark)
 toggleBookmarkOnServer(bookmark: { cardId: number }): Observable<{ id: number | null, isBookmarked: boolean }> {
@@ -51,5 +51,15 @@ toggleBookmarkOnServer(bookmark: { cardId: number }): Observable<{ id: number | 
     bookmark
   );
 }
+
+// 🔹 Mark a specific card as reviewed
+markReviewed(courseId: number, cardId: number): Observable<any> {
+  return this.http.put<any>(
+    `http://localhost:60831/api/Card/${courseId}/Card/${cardId}/review`,
+    {}
+  );
+}
+
+
 
 }

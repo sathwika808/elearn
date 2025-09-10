@@ -7,6 +7,8 @@ export interface Feedback {
 export interface Flashcard{
   IsReviewed: any;
   id: number;
+  
+cardId :number;
   question: string;
   answer: string;
   favorite?: boolean;
@@ -23,9 +25,15 @@ export interface card{
 
 }
 
+// models.ts
 export interface User {
   id: number;
   username: string;
   email: string;
+  password: string;
+}
+
+export interface UserDto {
+  username: string;
   password: string;
 }

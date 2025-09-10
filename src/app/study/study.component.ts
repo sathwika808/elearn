@@ -267,9 +267,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './study.component.css'
 })
 export class StudyComponent {
-  set: any;              // full set from backend
+  set: any;             
   currentIndex = 0;      // which card we are on
-  isFlipped = false;     // track flip state
+  isFlipped = false;  
   hasError = false;
 
   constructor(
@@ -304,38 +304,43 @@ export class StudyComponent {
     });
   }
 
-  // ✅ Flip card
-  flip() {
-    this.isFlipped = !this.isFlipped;
-  }
+flip() {
+  this.isFlipped = !this.isFlipped;
 
-  // ✅ Next card
+  if (this.isFlipped && this.set?.courseId && this.set.cards[this.currentIndex]?.isReviewed === false) {
+    this.markReviewed(this.set.cards[this.currentIndex]);
+  }
+}
+
+
+
   nextCard() {
     if (!this.set?.cards?.length) return;
     this.currentIndex = (this.currentIndex + 1) % this.set.cards.length;
     this.isFlipped = false;
-    this.markReviewed(this.set.cards[this.currentIndex]);
   }
 
-  // ✅ Previous card
+  
   prevCard() {
     if (!this.set?.cards?.length) return;
     this.currentIndex = (this.currentIndex - 1 + this.set.cards.length) % this.set.cards.length;
     this.isFlipped = false;
-    this.markReviewed(this.set.cards[this.currentIndex]);
   }
 
-  // ✅ Mark reviewed (always use real backend id)
-  markReviewed(card: any) {
-    if (!card?.isReviewed) {
-      card.isReviewed = true;
-      this.flashcardService.updateSet(this.set.id, this.set).subscribe(() => {
-        console.log(`Card ${card.id} marked as reviewed ✅`);
-      });
-    }
+  
+markReviewed(card: any) {
+  if (!card?.isReviewed) {
+    card.isReviewed = true;
+    this.flashcardService.markReviewed(this.set.courseId, card.id).subscribe({
+      next: (res) => {
+        console.log(`Card ${card.id} marked as reviewed ✅`, res);
+      },
+      error: (err) => console.error("Error marking reviewed:", err) 
+    });
   }
+}
 
-  // ✅ Toggle bookmark (always send real backend card.id)
+
   toggleFavorite(card: any) {
     if (!card) return;
 
@@ -345,7 +350,7 @@ export class StudyComponent {
       next: (res) => {
         console.log("Bookmark response:", res);
         card.favorite = res.isBookmarked;
-        card.bookmarkEntryId = res.id; // backend bookmark entry id
+        card.bookmarkEntryId = res.id; 
       },
       error: (err) => {
         console.error("Bookmark error:", err);
