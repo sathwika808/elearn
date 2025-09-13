@@ -16,13 +16,12 @@ cardId :number;
   isReviewed? :boolean;
   bookmarkEntryId?: number | null;
 }
-export interface card{
-    id: string;
+export interface card {
+  courseId: number;
   title: string;
   description: string;
-  tags?: string[]; 
-  cards: Flashcard[];
-
+  videoUrl?: string;   
+  cards: Flashcard[];
 }
 
 // models.ts

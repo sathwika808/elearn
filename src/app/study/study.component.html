@@ -1,92 +1,58 @@
-<!-- <div class="flashcard-wrapper" *ngIf="!hasError && set; else noSet">
-  <h3 class="set-title">{{ set.title }}</h3>
-
-  <ng-container *ngIf="currentCard; else emptySet">
-
-    <div class="card-area">
-      <div class="card-container" (click)="flip()">
-        <div class="card-flip" [class.card-flipped]="isFlipped">
-          <div class="card-face card-front">
-            {{ currentCard.question }}
-          </div>
-          <div class="card-face card-back">
-            {{ currentCard.answer }}
-          </div>
-        </div>
-      </div>
-
-      <button class="bookmark-btn" (click)="toggleFavorite(currentCard)">
-        <span *ngIf="!currentCard.favorite">
-          <i class="bi bi-bookmark"></i> Bookmark
-        </span>
-        <span *ngIf="currentCard.favorite">
-          <i class="bi bi-bookmark-fill"></i> Bookmarked
-        </span>
-      </button>
-    </div>
-
-    <div class="action-buttons">
-      <button (click)="prevCard()">⬅ Prev</button>
-      <button (click)="flip()">🔄 Flip</button>
-      <button (click)="nextCard()">Next ➡</button>
-    </div>
-  </ng-container>
-</div> -->
-
-<!-- <ng-template #noSet>
-  <p>⚠ No set found.</p>
-</ng-template> -->
-
-<!-- <ng-template #emptySet>
-  <p>⚠ This set has no cards.</p>
-</ng-template> -->
-
-
-
 <div class="flashcard-wrapper" *ngIf="!hasError && set; else noSet">
   <h3 class="set-title">{{ set.title }}</h3>
 
-  <!-- If set has cards -->
-  <ng-container *ngIf="set?.cards?.length > 0; else emptySet">
+  <!-- Toggle Buttons -->
+  <div class="toggle-buttons">
+    <button (click)="showVideo = true" [class.active]="showVideo">Video</button>
+    <button (click)="showVideo = false" [class.active]="!showVideo">Questions</button>
+  </div>
 
-    <div class="card-area">
-      <div class="card-container" (click)="flip()">
-        <div class="card-flip" [class.card-flipped]="isFlipped">
-          <!-- Front -->
-          <div class="card-face card-front">
-            {{ set.cards[currentIndex].question }}
-          </div>
-          <!-- Back -->
-          <div class="card-face card-back">
-            {{ set.cards[currentIndex].answer }}
+  <!-- Video Section -->
+  <div *ngIf="showVideo && set?.videoUrl" class="video-container">
+    <video controls class="course-video">
+      <source [src]="set.videoUrl" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Questions Section -->
+  <div *ngIf="!showVideo">
+    <ng-container *ngIf="set?.cards?.length > 0; else emptySet">
+      <div class="card-area">
+        <div class="card-container" (click)="flip()">
+          <div class="card-flip" [class.card-flipped]="isFlipped">
+            <div class="card-face card-front">
+              {{ set.cards[currentIndex].question }}
+            </div>
+            <div class="card-face card-back">
+              {{ set.cards[currentIndex].answer }}
+            </div>
           </div>
         </div>
+
+        <button class="bookmark-btn" (click)="toggleFavorite(set.cards[currentIndex])">
+          <span *ngIf="!set.cards[currentIndex].favorite">
+            <i class="bi bi-bookmark"></i> Bookmark
+          </span>
+          <span *ngIf="set.cards[currentIndex].favorite">
+            <i class="bi bi-bookmark-fill"></i> Bookmarked
+          </span>
+        </button>
       </div>
 
-      <!-- ✅ Bookmark button (uses real backend card.id) -->
-      <button class="bookmark-btn" (click)="toggleFavorite(set.cards[currentIndex])">
-        <span *ngIf="!set.cards[currentIndex].favorite">
-          <i class="bi bi-bookmark"></i> Bookmark
-        </span>
-        <span *ngIf="set.cards[currentIndex].favorite">
-          <i class="bi bi-bookmark-fill"></i> Bookmarked
-        </span>
-      </button>
-    </div>
-
-    <div class="action-buttons">
-      <button (click)="prevCard()">⬅ Prev</button>
-      <button (click)="flip()">🔄 Flip</button>
-      <button (click)="nextCard()">Next ➡</button>
-    </div>
-  </ng-container>
+      <div class="action-buttons">
+        <button class="nav-btn" (click)="prevCard()">⬅ Prev</button>
+        <button class="flip-btn" (click)="flip()">🔄 Flip</button>
+        <button class="nav-btn" (click)="nextCard()">Next ➡</button>
+      </div>
+    </ng-container>
+  </div>
 </div>
 
-<!-- Fallbacks -->
 <ng-template #noSet>
-  <p>⚠ No set found.</p>
+  <p class="message-container">⚠ No set found.</p>
 </ng-template>
 
 <ng-template #emptySet>
-  <p>⚠ This set has no cards.</p>
+  <p class="message-container">⚠ This set has no cards.</p>
 </ng-template>
